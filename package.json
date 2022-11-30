@@ -1,0 +1,22 @@
+{
+  "name": "bankingap-fullstack",
+  "version": "1.1.0",
+  "description": "App for bank made with MERN",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.2.0",
+    "mongodb": "^4.11.0",
+    "swagger-ui-express": "^4.6.0"
+  }
+}

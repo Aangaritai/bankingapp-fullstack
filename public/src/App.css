@@ -1,0 +1,10 @@
+.card {
+  width: 90%;
+  max-width: 20rem;
+}
+.active {
+  font-weight: bold;
+}
+a:hover {
+  cursor:pointer;
+}
