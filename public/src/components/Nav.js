@@ -5,17 +5,17 @@ import {
   onAuthStateChanged
 } from 'firebase/auth';
 
-import conf from '../conf-firebase.js'
+import authConfig from '../authfirebase';
 
 function Nav() {
   const [show, setShow] = React.useState(false);
   const body = document.querySelector('body');
   const wscreen = body.clientWidth >= 1024;
-  const auth = getAuth(conf)
+  const auth = getAuth(authConfig)
   const user = auth.currentUser
 
   React.useEffect(() => {
-    const auth = getAuth(conf)
+    const auth = getAuth(authConfig)
     onAuthStateChanged(auth, user => {
       if(user){
         setShow(true);

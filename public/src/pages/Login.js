@@ -8,17 +8,17 @@ import {
   GoogleAuthProvider
 
 } from "firebase/auth";
-import conf from '../conf-firebase.js'
+import authConfig from '../authfirebase';
 
 function Login() {
   const [email, setEmail] = React.useState('');
   const [show, setShow] = React.useState(false);
   const [password, setPassword] = React.useState('');
   const [status, setStatus] = React.useState('');
-  const auth = getAuth(conf)
+  const auth = getAuth(authConfig)
 
   React.useEffect(() => {
-    const auth = getAuth(conf)
+    const auth = getAuth(authConfig)
     onAuthStateChanged(auth, user => {
       if(user){
         setShow(true);

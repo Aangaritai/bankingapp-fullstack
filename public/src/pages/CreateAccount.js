@@ -7,7 +7,7 @@ import {
   createUserWithEmailAndPassword
 } from 'firebase/auth';
 
-import conf from '../conf-firebase.js'
+import authConfig from '../authfirebase';
 
 function CreateAccount() {
   const [status, setStatus] = React.useState('');
@@ -16,8 +16,7 @@ function CreateAccount() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const auth = getAuth(conf)
-
+  const auth = getAuth(authConfig)
 
   function validate(field, label) {
     if (!field) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {getAuth, deleteUser} from 'firebase/auth'
-import conf from '../conf-firebase.js'
+import authConfig from '../authfirebase';
 
 function AllData() {
   const [data, setData] = React.useState(null);
@@ -9,7 +9,7 @@ function AllData() {
   React.useEffect(() => {
     // fetch all accounts from API
     try {
-      const auth = getAuth(conf)
+      const auth = getAuth(authConfig)
       const user = auth.currentUser
       user.getIdToken()
         .then(idToken => {

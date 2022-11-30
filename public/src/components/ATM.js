@@ -1,6 +1,6 @@
 import React from 'react'
 import { getAuth } from 'firebase/auth';
-import conf from '../conf-firebase.js'
+import authConfig from '../authfirebase';
 
 function ATMForm({ onChange, isDeposit, isValid}){
   const choice = ["Deposit", "Cash Back"];
@@ -22,7 +22,7 @@ function ATM({atmMode, isDeposit, email, balance}){
   const [totalState, setTotalState] = React.useState(balance)
   let deposit = 0;
 
-  const auth = getAuth(conf)
+  const auth = getAuth(authConfig)
 
   const checkNumber = () => {
     if(deposit <= 0) {

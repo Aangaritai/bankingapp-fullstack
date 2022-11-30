@@ -12,7 +12,8 @@ import {
   getAuth,
   onAuthStateChanged
 } from "firebase/auth";
-import conf from './conf-firebase.js'
+
+import authConfig from './authfirebase';
 
 //Components
 import Nav from './components/Nav';
@@ -33,7 +34,7 @@ function App() {
   const [session, setSession] = React.useState(false)
 
   React.useEffect(() => {
-    const auth = getAuth(conf)
+    const auth = getAuth(authConfig)
     onAuthStateChanged(auth, user => {
       if(user){
         setSession(true);

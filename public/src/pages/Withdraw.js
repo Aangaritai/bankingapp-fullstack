@@ -3,7 +3,7 @@ import Card from '../components/Card';
 import ATM from '../components/ATM';
 
 import { getAuth } from 'firebase/auth';
-import conf from '../conf-firebase.js'
+import authConfig from '../authfirebase';
 
 function Withdraw() {
   const [status, setStatus] = React.useState('');
@@ -11,7 +11,7 @@ function Withdraw() {
 
 
   React.useEffect(() => {
-    const auth = getAuth(conf)
+    const auth = getAuth(authConfig)
     const user = auth.currentUser
     user.getIdToken()
       .then(idToken => {
