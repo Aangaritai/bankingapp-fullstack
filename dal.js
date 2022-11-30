@@ -1,9 +1,7 @@
-const { MongoClient } = require('mongodb');
-const url = 'mongodb://localhost:27017';
-const client = new MongoClient(url);
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://bankadmin:btEWJtV6xBrJVYd@cluster0.gaut0zc.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 var db = null;
-
-
 
 async function main() {
   // Use connect method to connect to the server
@@ -15,8 +13,6 @@ async function main() {
 }
 
 // Users
-
-
 function allUsers() {
   return new Promise((resolve, reject) => {
     const users = db
@@ -94,8 +90,6 @@ function deleteUser(email) {
         reject(e)
       })
   })
-
-
 }
 
 function deleteMove(email) {
@@ -112,6 +106,7 @@ function deleteMove(email) {
       })
   })
 }
+
 function getMove( email ) {
   return new Promise((resolve, reject) => {
     const transactions = db
